@@ -51,6 +51,11 @@ public class CharactersController {
         return tableCharacters.findById(id).get();
     }
 
+    @GetMapping(value = "/hello")
+    public String hello()throws Exception {
+        return "hello";
+    }
+
     @PostMapping(value = "/insertOne")
     public void insertOne(@RequestHeader("APIKEY") String apiKey, @RequestBody Character character) throws Exception {
         checkApiKey(apiKey);
